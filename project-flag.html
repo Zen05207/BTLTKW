@@ -1,0 +1,87 @@
+<!-- project-flag.html -->
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Flag Raising Simulation — Cầm Phạm</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">Cầm Phạm<span class="underscore">_</span></div>
+      <nav class="main-nav" id="mainNav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="skills.html" class="nav-link">Skills</a>
+        <a href="projects.html" class="nav-link active">Projects</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <button class="burger" id="burger" aria-label="menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <!-- main content -->
+  <main class="container">
+    <section class="project-detail">
+      <!-- left: media (image + video) -->
+      <div class="project-media card">
+        <!-- Thay đường dẫn ảnh / video bằng file của bạn -->
+        <img src="img/project1.jpg" alt="Flag Raising Simulation preview">
+        <video controls preload="metadata" poster="img/project1.jpg">
+          <source src="video/flag.mp4" type="video/mp4">
+          Trình duyệt của bạn không hỗ trợ thẻ video.
+        </video>
+      </div>
+
+      <!-- right: thông tin dự án -->
+      <aside class="project-info card">
+        <h2>Flag Raising Simulation</h2>
+
+        <p class="lead">Mô phỏng nghi lễ thượng cờ chân thực dành cho Roblox — kết hợp animation từ Blender (smartbone), xử lý trạng thái kéo cờ, chuyển sang cờ bay, và đồng bộ âm thanh.</p>
+
+        <h4>Miêu tả chi tiết</h4>
+        <p>Hệ thống mô phỏng quy trình kéo cờ gồm: lá cờ treo ban đầu, hệ thống ròng rọc kéo dần, khi tới vị trí xác định sẽ đổi thành lá cờ bay (với animation smartbone), đồng thời phát âm nhạc nghi lễ và hiệu ứng gió. Hỗ trợ xem nhiều người (multiplayer) với sync server-client cơ bản.</p>
+
+        <h4>Tính năng chính</h4>
+        <ul>
+          <li>Quá trình kéo cờ mượt mà, có Tween/easing.</li>
+          <li>Chuyển đổi trạng thái cờ (hanging → flying) khi đạt chiều cao.</li>
+          <li>Hiệu ứng gió dùng xương (bone) để làm lá cờ bay tự nhiên.</li>
+          <li>Đồng bộ âm thanh nghi lễ (play/stop) khi kéo cờ.</li>
+          <li>Thiết kế UI hiển thị trạng thái (progress, time).</li>
+        </ul>
+
+        <h4>Công nghệ & công cụ</h4>
+        <ul>
+          <li>Roblox Studio (Lua: TweenService, RemoteEvent)</li>
+          <li>Blender (SmartBone / Rig) để tạo animation cờ</li>
+          <li>Audio: SoundService (Roblox) hoặc file .mp3 cho demo web</li>
+          <li>HTML/CSS/JS — trang demo & video minh họa</li>
+        </ul>
+
+        <h4>Tài liệu kỹ thuật / Ghi chú</h4>
+        <ol>
+          <li>Để test multiplayer, triển khai script server kiểm tra và broadcast trạng thái (RemoteEvents).</li>
+          <li>Tối ưu hóa mesh cờ và texture trong Blender để giảm tải khi import vào Roblox.</li>
+          <li>Trong demo web: video lưu sẵn `video/flag.mp4`, poster ảnh `img/project1.jpg`.</li>
+        </ol>
+
+        <div style="margin-top:14px;">
+          <a class="btn small" href="projects.html">Quay lại Projects</a>
+          <a class="btn ghost" href="contact.html" style="margin-left:8px;">Liên hệ tác giả</a>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <!-- footer -->
+  <footer class="site-footer">
+    <div class="container">© 2025 Cầm Phạm — Game Developer</div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
